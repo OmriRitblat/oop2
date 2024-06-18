@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DeliveryPerson.cpp" />
+    <ClCompile Include="Florist.cpp" />
+    <ClCompile Include="FlowerArranger.cpp" />
+    <ClCompile Include="FlowersBouquet.cpp" />
+    <ClCompile Include="Gardener.cpp" />
+    <ClCompile Include="Grower.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Project2Oop.cpp" />
+    <ClCompile Include="Wholesaler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

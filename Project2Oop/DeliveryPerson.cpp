@@ -1,3 +1,6 @@
+#include "Person.cpp"
+#include "FlowersBouquet.cpp"
+#include <iostream>
 class DeliveryPerson {
 public:
     void deliver(Person* recipient, FlowersBouquet* bouquet) {
