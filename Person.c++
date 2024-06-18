@@ -1,18 +1,13 @@
-public
 class Person
 {
-private:
-    name : std::string;
-
 public:
-    Person(/* args */);
-    ~Person();
-};
+    std::string name;
 
-Person::Person(/* args */)
-{
-}
+    Person(std::string n) : name(n) {}
 
-Person::~Person()
-{
+    void orderFlowers(class Florist *florist, Person *recipient, std::vector<std::string> flowers);
+    void acceptFlowers(FlowersBouquet *bouquet)
+    {
+        std::cout << name << " received flowers." << std::endl;
+    }
 }
