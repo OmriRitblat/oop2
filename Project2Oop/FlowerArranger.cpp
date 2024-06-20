@@ -1,3 +1,6 @@
+#include "FlowerArranger.h"
+#include "FlowersBouquet.cpp"
+#include <iostream>
 class FlowerArranger {
 public:
     void arrangeFlowers(FlowersBouquet* bouquet) {

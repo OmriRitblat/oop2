@@ -1,11 +1,17 @@
 #include "Wholesaler.cpp"
 #include "FlowerArranger.cpp"
 #include "DeliveryPerson.cpp"
+#include "Florist.h"
 class Florist {
+private:
+    std::string name;
 public:
     Wholesaler* wholesaler;
     FlowerArranger* flowerArranger;
     DeliveryPerson* deliveryPerson;
+    std::string getName() {
+        return name;
+    }
 
     Florist(Wholesaler* wholesaler, FlowerArranger* flowerArranger, DeliveryPerson* deliveryPerson)
         : wholesaler(wholesaler), flowerArranger(flowerArranger), deliveryPerson(deliveryPerson) {}
@@ -17,18 +23,3 @@ public:
         deliveryPerson->deliver(recipient, bouquet);
     }
 };
-
-void Person::orderFlowers(Florist* florist, Person* recipient, const std::vector<std::string>& flowers) {
-    std::cout << name << " is ordering flowers\n";
-    florist->acceptOrder(recipient, flowers);
-}
-
-void Person::acceptFlowers(FlowersBouquet* bouquet) {
-    std::cout << name << " received flowers\n";
-    if (bouquet->is_arranged) {
-        std::cout << "The flowers are beautifully arranged!\n";
-    }
-    else {
-        std::cout << "The flowers are not arranged yet!\n";
-    }
-}
