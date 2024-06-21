@@ -1,21 +1,16 @@
-#pragma once
-#include "Wholesaler.cpp"
-#include "FlowerArranger.cpp"
-#include "DeliveryPerson.cpp"
-#include "Florist.h"
-class Florist
-{
-private:
-    std::string name;
+#define FLORIST_H
+#include "Wholesaler.h"
+#include "FlowerArranger.h"
+#include "DeliveryPerson.h"
+
+class Florist : public Person {
 public:
     Wholesaler* wholesaler;
     FlowerArranger* flowerArranger;
     DeliveryPerson* deliveryPerson;
+
+    Florist(Wholesaler* wholesaler, FlowerArranger* flowerArranger, DeliveryPerson* deliveryPerson, std::string name);
+    void acceptOrder(Person* recipient,std::vector<std::string>& flowers);
     std::string getName();
 
-    Florist(Wholesaler* wholesaler, FlowerArranger* flowerArranger, DeliveryPerson* deliveryPerson)
-        : wholesaler(wholesaler), flowerArranger(flowerArranger), deliveryPerson(deliveryPerson);
-
-    void acceptOrder(Person* recipient, const std::vector<std::string>& flowers);
 };
-

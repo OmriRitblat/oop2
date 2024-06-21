@@ -1,13 +1,21 @@
 #include "Wholesaler.h"
 #include "Grower.h"
-#include "FlowersBouquet.cpp"
+#include "FlowersBouquet.h"
+#include <string>
+#include <vector>
 #include <iostream>
-class Wholesaler {
-public:
-    Grower grower;
-
-    FlowersBouquet* acceptOrder(const std::vector<std::string>& flowers) {
-        std::cout << "Wholesaler forwarding order to grower\n";
-        return grower.prepareOrder(flowers);
+#include "Person.h"
+    Wholesaler::Wholesaler(Grower* g, std::string name) :Person(name) {
+        grower = g;
     }
-};
+
+    std::string Wholesaler::getName() {
+        return "Wholesaler " + Person::getName();
+    }
+    
+    FlowersBouquet* Wholesaler::acceptOrder(std::vector<std::string>& flowers) {
+        std::cout << "forwards the requst to "+grower->getName()+ "." << std::endl;
+        FlowersBouquet* f=grower->prepareOrder(flowers);
+        std::cout << grower->getName()+" returns flowers to "+getName()+ "." << std::endl;
+        return f;
+    }

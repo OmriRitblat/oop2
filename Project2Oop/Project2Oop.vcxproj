@@ -141,7 +141,7 @@
     <ClInclude Include="DeliveryPerson.h" />
     <ClInclude Include="Florist.h" />
     <ClInclude Include="FlowerArranger.h" />
-    <ClInclude Include="FlowerBouquet.h" />
+    <ClInclude Include="FlowersBouquet.h" />
     <ClInclude Include="Gardener.h" />
     <ClInclude Include="Grower.h" />
     <ClInclude Include="Person.h" />

@@ -1,11 +1,12 @@
-class FlowersBouquet {
-public:
-    std::vector<std::string> bouquet;
-    bool is_arranged;
+#include <string>
+#include <vector>
+#include "FlowerBouquet.h"
 
-    FlowersBouquet(const std::vector<std::string>& flowers) : bouquet(flowers), is_arranged(false) {}
+    FlowersBouquet::FlowersBouquet(std::vector<std::string>& flowers){
+        bouquet = flowers;
+        is_arranged = false;
+    }
 
-    void arrange() {
+    void FlowersBouquet::arrange() {
         is_arranged = true;
     }
-};

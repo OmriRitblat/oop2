@@ -1,10 +1,15 @@
 #include "FlowerArranger.h"
-#include "FlowersBouquet.cpp"
+#include "FlowersBouquet.h"
+#include "Person.h"
 #include <iostream>
-class FlowerArranger {
-public:
-    void arrangeFlowers(FlowersBouquet* bouquet) {
-        std::cout << "Flower Arranger arranging flowers\n";
+FlowerArranger::FlowerArranger(std::string name) :Person(name) { }
+
+    std::string FlowerArranger::getName() {
+        return "Flower Arranger " + Person::getName();
+    }
+
+
+    void FlowerArranger::arrangeFlowers(FlowersBouquet* bouquet) {
+        std::cout << getName() + " arranges flowers" + "." << std::endl;
         bouquet->arrange();
     }
-};

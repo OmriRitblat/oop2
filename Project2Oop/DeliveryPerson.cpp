@@ -1,11 +1,14 @@
-#include "Person.cpp"
-#include "FlowersBouquet.cpp"
+#include "Person.h"
 #include <iostream>
 #include "DeliveryPerson.h"
-class DeliveryPerson {
-public:
-    void deliver(Person* recipient, FlowersBouquet* bouquet) {
-        std::cout << "Delivery Person delivering flowers to " << recipient->name << "\n";
-        recipient->acceptFlowers(bouquet);
+#include "FlowersBouquet.h"
+
+    DeliveryPerson::DeliveryPerson(std::string name) :Person(name) { }
+
+    std::string DeliveryPerson::getName() {
+        return "Delivery Person " + Person::getName();
     }
-};
+
+    void DeliveryPerson::deliver(Person* recipient, FlowersBouquet* bouquet) {
+        std::cout << getName()+" deliveres flowers "+recipient->getName()+"." << std::endl;
+        recipient->acceptFlowers(bouquet);}

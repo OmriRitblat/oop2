@@ -1,12 +1,17 @@
 #include "Gardener.h"
-#include "FlowersBouquet.cpp"
+#include "FlowersBouquet.h"
 #include <iostream>
 #include <vector>
-class Gardener {
-public:
-    FlowersBouquet* prepareBouquet(std::vector<std::string> flowers) {
-        std::cout << "Grower asking gardener to prepare flowers\n";
+#include "Person.h"
+
+    Gardener::Gardener(std::string name) :Person(name) {}
+
+    std::string Gardener::getName() {
+        return "Gardener " + Person::getName();
+    }
+
+    FlowersBouquet* Gardener::prepareBouquet(std::vector<std::string> flowers) {
+        std::cout << getName()+" prepares flowers""." << std::endl;
         FlowersBouquet* f = new FlowersBouquet(flowers);
         return f;
     }
-};

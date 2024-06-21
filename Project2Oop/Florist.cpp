@@ -1,25 +1,32 @@
-#include "Wholesaler.cpp"
-#include "FlowerArranger.cpp"
-#include "DeliveryPerson.cpp"
+
+#include "Wholesaler.h"
+#include "FlowerArranger.h"
+#include "DeliveryPerson.h"
 #include "Florist.h"
-class Florist {
-private:
-    std::string name;
-public:
-    Wholesaler* wholesaler;
-    FlowerArranger* flowerArranger;
-    DeliveryPerson* deliveryPerson;
-    std::string getName() {
-        return name;
+#include <string>
+#include <vector>
+#include "Person.h"
+#include "FlowerArranger.h"
+#include <iostream>
+#include "FlowersBouquet.h"
+#include "DeliveryPerson.h"
+
+    Florist::Florist(Wholesaler* w, FlowerArranger* f, DeliveryPerson* d, std::string name):Person(name) {
+        wholesaler = w;
+        flowerArranger = f;
+        deliveryPerson = d;
     }
 
-    Florist(Wholesaler* wholesaler, FlowerArranger* flowerArranger, DeliveryPerson* deliveryPerson)
-        : wholesaler(wholesaler), flowerArranger(flowerArranger), deliveryPerson(deliveryPerson) {}
+    std::string Florist::getName() {
+        return "Florist " + Person::getName();
+    }
 
-    void acceptOrder(Person* recipient, const std::vector<std::string>& flowers) {
-        std::cout << "Florist accepting order\n";
+    void Florist::acceptOrder(Person* recipient, std::vector<std::string>& flowers) {
+        std::cout << "forwards request to "+ wholesaler->getName();
         FlowersBouquet* bouquet = wholesaler->acceptOrder(flowers);
+        std::cout << wholesaler->getName()+" returns flowers to " +getName()+"." << std::endl;
+        std::cout << getName() + " request flowers arrangement from " + flowerArranger->getName()+"." << std::endl;
         flowerArranger->arrangeFlowers(bouquet);
+        std::cout << getName() + " fowards flowers to " + deliveryPerson->getName()+ "." << std::endl;
         deliveryPerson->deliver(recipient, bouquet);
     }
-};

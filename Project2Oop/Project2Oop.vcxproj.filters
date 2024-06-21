@@ -53,7 +53,7 @@
     <ClInclude Include="FlowerArranger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlowerBouquet.h">
+    <ClInclude Include="FlowersBouquet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Gardener.h">

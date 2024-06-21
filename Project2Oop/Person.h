@@ -1,12 +1,22 @@
-#pragma once
+#ifndef PERSON_H
+#define PERSON_H
+
 #include <string>
-class Person
-{
-public:
+#include <vector>
+#include <iostream>
+
+class Florist;
+class FlowersBouquet;
+
+class Person {
+private:
     std::string name;
-    Person(std::string n) : name(n) {}
-    std:: string getName();
-    void orderFlowers(class Florist* florist, Person* recipient, std::vector<std::string> flowers);
-    void acceptFlowers(FlowersBouquet* bouquet);
+
+public:
+    Person(std::string n);
+    virtual std::string getName();
+    void orderFlowers(Florist* florist, Person* recipient, std::vector<std::string>& flowers);
+    void acceptFlowers(FlowersBouquet* b);
 };
+#endif // !PERSON_H
 

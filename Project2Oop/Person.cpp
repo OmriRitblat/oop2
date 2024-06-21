@@ -1,29 +1,28 @@
+
+
 #include "Person.h"
 #include <string>
-#include <string>
 #include <vector>
-#include "FlowersBouquet.cpp"
 #include <iostream>
-#include "florist.h"
-class Person
-{
-private:
-    std::string name;
+#include "FlowersBouquet.h"
+#include "Florist.h"
 
-public:
-    Person(std::string n) : name(n) {}
-    std::string getName() {
+    Person::Person(std::string n) : name(n) {}
+    std::string Person::getName() {
         return name;
     }
-    void orderFlowers(class Florist* florist, Person* recipient, std::vector<std::string> flowers) {
-        std::cout << name + "order flowers to" + recipient->getName() + "from florist " + florist->getName();
+    void Person::orderFlowers(Florist* florist, Person* recipient, std::vector<std::string>& flowers) {
+        std::cout << name + " order flowers to " + recipient->getName() + "from florist " + florist->getName()+"." << std::endl;
         florist->acceptOrder(recipient, flowers);
     }
-    void acceptFlowers(FlowersBouquet* bouquet)
+    void Person::acceptFlowers(FlowersBouquet* b)
     {
-        for (size_t i = 0; i < bouquet->bouquet.size(); ++i) {
-            std::cout << bouquet->bouquet[i]+", ";
+        std::cout << name + " accepts the flowers: ";
+        for (size_t i = 0; i < b->bouquet.size(); i++) {
+            if(i!= b->bouquet.size()-1)
+                std::cout << b->bouquet[i]+", ";
+            else
+                std::cout << b->bouquet[i];
         }
-        std::cout <<"" << std::endl;
+        std::cout <<"." << std::endl;
     }
-};

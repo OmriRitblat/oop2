@@ -1,5 +1,2 @@
-﻿  Wholesaler.cpp
-C:\Users\omrir\Project2\Project2Oop\Wholesaler.cpp(2,18): error C2011: 'Wholesaler': 'class' type redefinition
-  C:\Users\omrir\Project2\Project2Oop\Wholesaler.h(2,7):
-  see declaration of 'Wholesaler'
-  
+﻿  Person.cpp
+  Project2Oop.vcxproj -> C:\Users\omrir\Project2\x64\Debug\Project2Oop.exe
