@@ -22,4 +22,13 @@ int main()
     Person* robin = new Person("Robin");
     std::vector<std::string> flowers = { "Roses","Violets","Gladiolus" };
     chris->orderFlowers(fl, robin, flowers);
+
+    delete gar;
+    delete grow;
+    delete w;
+    delete fr;
+    delete dp;
+    delete fl;
+    delete chris;
+    delete robin;
 }

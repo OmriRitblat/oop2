@@ -27,6 +27,7 @@
         std::cout << wholesaler->getName()+" returns flowers to " +getName()+"." << std::endl;
         std::cout << getName() + " request flowers arrangement from " + flowerArranger->getName()+"." << std::endl;
         flowerArranger->arrangeFlowers(bouquet);
+        std::cout << flowerArranger->getName() + " returns arranged flowers to "+getName() + "." << std::endl;
         std::cout << getName() + " fowards flowers to " + deliveryPerson->getName()+ "." << std::endl;
         deliveryPerson->deliver(recipient, bouquet);
     }
