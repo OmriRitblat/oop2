@@ -14,7 +14,7 @@
     }
     
     FlowersBouquet* Wholesaler::acceptOrder(std::vector<std::string>& flowers) {
-        std::cout << "forwards the requst to "+grower->getName()+ "." << std::endl;
+        std::cout << getName()+" forwards the request to "+grower->getName()+ "." << std::endl;
         FlowersBouquet* f=grower->prepareOrder(flowers);
         std::cout << grower->getName()+" returns flowers to "+getName()+ "." << std::endl;
         return f;

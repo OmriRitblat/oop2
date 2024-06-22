@@ -22,7 +22,7 @@
     }
 
     void Florist::acceptOrder(Person* recipient, std::vector<std::string>& flowers) {
-        std::cout << "forwards request to "+ wholesaler->getName();
+        std::cout << getName()+" forwards request to "+ wholesaler->getName()+"." << std::endl;
         FlowersBouquet* bouquet = wholesaler->acceptOrder(flowers);
         std::cout << wholesaler->getName()+" returns flowers to " +getName()+"." << std::endl;
         std::cout << getName() + " request flowers arrangement from " + flowerArranger->getName()+"." << std::endl;

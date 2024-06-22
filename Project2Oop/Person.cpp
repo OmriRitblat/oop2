@@ -12,7 +12,15 @@
         return name;
     }
     void Person::orderFlowers(Florist* florist, Person* recipient, std::vector<std::string>& flowers) {
-        std::cout << name + " order flowers to " + recipient->getName() + "from florist " + florist->getName()+"." << std::endl;
+        std::cout << name + " orders flowers to " + recipient->getName() + " from " + florist->getName();
+        std::cout << ": ";
+        for (size_t i = 0; i < flowers.size(); i++) {
+            if (i != flowers.size() - 1)
+                std::cout << flowers[i] + ", ";
+            else
+                std::cout << flowers[i] + "." << std::endl;
+
+        }
         florist->acceptOrder(recipient, flowers);
     }
     void Person::acceptFlowers(FlowersBouquet* b)

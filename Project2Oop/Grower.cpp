@@ -10,7 +10,7 @@
         return "Grower " + Person::getName();
     }
     FlowersBouquet* Grower::prepareOrder(std::vector<std::string>& flowers) {
-        std::cout << "forwards the request to "+gardener->getName()+ "." << std::endl;
+        std::cout << getName()+" forwards the request to "+gardener->getName()+ "." << std::endl;
         FlowersBouquet* f=gardener->prepareBouquet(flowers);
         std::cout << gardener->getName()+" returns flowers to " +getName()+ "." << std::endl;
         return f;
