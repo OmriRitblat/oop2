@@ -7,13 +7,11 @@
 #include <iostream>
 #include "Person.h"
 class Wholesaler : public Person {
-public:
+private: 
     Grower* grower;
-
+public:
     Wholesaler(Grower* g, std::string name);
-
     std::string getName();
-
     FlowersBouquet* acceptOrder(std::vector<std::string>& flowers);
 };
 #endif

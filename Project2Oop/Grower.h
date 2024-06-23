@@ -4,9 +4,9 @@
 #include "FlowersBouquet.h"
 #include "Person.h"
 class Grower : public Person {
-public:
+private:   
     Gardener* gardener;
-
+public:
     Grower(Gardener* g, std::string name);
 
     std::string getName();

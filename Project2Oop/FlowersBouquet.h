@@ -3,10 +3,10 @@
 #include <vector>
 #include <string>
 class FlowersBouquet {
+private:
+    bool is_arranged;
 public:
     std::vector<std::string> bouquet;
-    bool is_arranged;
-
     FlowersBouquet(std::vector<std::string>& flowers);
 
     void arrange();

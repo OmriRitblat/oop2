@@ -10,5 +10,5 @@
     }
 
     void DeliveryPerson::deliver(Person* recipient, FlowersBouquet* bouquet) {
-        std::cout << getName()+" deliveres flowers "+recipient->getName()+"." << std::endl;
+        std::cout << getName()+" delivers flowers "+recipient->getName()+"." << std::endl;
         recipient->acceptFlowers(bouquet);}
